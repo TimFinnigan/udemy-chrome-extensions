@@ -1,0 +1,33 @@
+#sidebar,
+.left-sidebar,
+.js-filter-btn {
+	visibility: hidden;
+}
+
+.js-favorite-count,
+.js-comments-container,
+.js-show-link,
+.comment,
+.mb0,
+.js-products-menu,
+.answers-subheader,
+.everyonelovesstackoverflow,
+.post-taglist,
+.js-add-link,
+.js-post-issue,
+.site-footer--container,
+.s-btn__primary,
+.bottom-notice,
+#post-form,
+#search + ol,
+#question-header + div {
+	display: none !important;
+}
+
+.answer:nth-of-type(2) {
+	border: 5px solid darkgreen !important;
+	border-radius: 5px;
+	padding: 10px !important;
+	padding-bottom: 0px !important;
+	margin-bottom: 25px !important;
+}
