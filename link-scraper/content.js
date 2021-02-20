@@ -14,3 +14,11 @@ for (let i = 0; i < links.length; i++) {
 let uniqueUrls = [...new Set(linkArray)];
 
 console.log(uniqueUrls);
+
+// Create text document — only saves 1st link in text doc
+let textDoc = document.createElement('a');
+
+textDoc.href = 'data:attachment/text,' + encodeURI(uniqueUrls.join('\n'));
+textDoc.target = '_blank';
+textDoc.download = 'links.txt';
+textDoc.click();
