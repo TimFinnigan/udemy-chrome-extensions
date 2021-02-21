@@ -1,23 +1,21 @@
-let linkArray = [];
+var linkArray = [];
 
-let links = document.links;
+var links = document.links;
 
-for (let i = 0; i < links.length; i++) {
-	let url = links[i].href;
-
-	// Get Reddit links
-	if (url.includes('comments')) {
-		linkArray.push(links[i].href);
-	}
+for (var i = 0; i < links.length; i++) {
+	var url = links[i].href;
+	linkArray.push(url);
 }
 
 // Remove duplicates
-let uniqueUrls = [...new Set(linkArray)];
+var uniqueUrls = [...new Set(linkArray)];
 
-// Create and save text document
-let textDoc = document.createElement('a');
+// Create and save JSON file
+var dataStr =
+	'data:text/json;charset=utf-8,' +
+	encodeURIComponent(JSON.stringify(uniqueUrls));
 
-textDoc.href = 'data:attachment/text,' + encodeURI(uniqueUrls.join('\n'));
-textDoc.target = '_blank';
-textDoc.download = 'links.txt';
-textDoc.click();
+var dlAnchorElem = document.createElement('a');
+dlAnchorElem.setAttribute('href', dataStr);
+dlAnchorElem.setAttribute('download', 'links.json');
+dlAnchorElem.click();
