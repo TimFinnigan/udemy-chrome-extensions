@@ -11,7 +11,7 @@
     "content_scripts": [
         {
             "js": [
-                "content.js"
+                "script.js"
             ],
             "matches": [
                 "https://*.reddit.com/*"
