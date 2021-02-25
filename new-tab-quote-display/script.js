@@ -1,11 +1,12 @@
 function getQuotes() {
-	let url = 'https://type.fit/api/quotes';
+	let url = '/quotes.json';
 	fetch(url)
 		.then((response) => response.json())
 		.then((data) => {
-			let randomIndex = Math.floor(Math.random() * data.length);
-			let quote = data[randomIndex];
-			document.getElementById('quote').innerHTML = quote.text;
+			let quotes = data.quotes;
+			let randomIndex = Math.floor(Math.random() * quotes.length);
+			let quote = quotes[randomIndex];
+			document.getElementById('quote').innerHTML = quote.quote;
 			document.getElementById('source').innerHTML = quote.author;
 		});
 }
